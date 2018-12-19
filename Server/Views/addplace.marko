@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>${input.title}</title>
+        <meta name="viewport" content="width=device-width, intial-scale=1.0, shrink-to-fit=no">  
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">          
+        <link href="/index.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    </head>
+    <header>
+        <img class="imageheadersize headerpadding"  src="/images/Header.png">
+        <h1 class="fontcolor tcenter">TOP <em>ATTRACTIONS</em> IN TOKYO</h1>
+        <h2 class="fontcolor tcenter">Discover what the largest metropolitan area in the world can offer!</h2>
+    </header>
+        <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+            <br>
+            <br>
+<main>
+    <body class="left">
+            <div id="navbar">
+                <a class="link-a" href="/">HOME</a>
+                <a class="link-a" href="#news">ABOUT</a>
+                <a class="link-a" href="#contact">CONTACT</a>
+                <a class="link-a" href="#contact">SHOP</a>
+                <a class="link-a" href="/comment">COMMENT</a>
+                <a class="link-a" href="/addplace">ADD PLACE</a>
+            </div>
+            <br>
+            <br>
+        <div class="container">     
+            <form class="form" action="/addplace" method="POST">
+                <h1 class="fontcolor">WE LOVE TO FEATURE YOUR FAVORITE PLACES</h1>
+                <h3 class="fontcolor">Add your favorite locations to our homepage by providing the following details needed below</h3>
+                <div class="form-group">
+                    <label class="fontcolor">Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Please write the name of the place here"/>
+                </div>
+                <div class="form-group"> 
+                    <label class="fontcolor">Description</label>
+                    <textarea name="description" class="form-control" placeholder="Please write a short description about the area, don't forget to be creative!"></textarea>
+                </div>
+                <div class="form-group"> 
+                    <label class="fontcolor">Image</label>
+                    <input type="text" name="image1" class="form-control" placeholder="This part is optional but you can add the url of your picture"/>
+                </div>
+                    <div class="form-group"> 
+                    <label class="fontcolor">Image</label>
+                    <input type="text" name="image2" class="form-control" placeholder="This part is optional but you can add the url of your picture"/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        <hr class="hr">
+        <h1 class="fontcolor">PLACES OUR USERS HAVE RECENTLY ADDED</h1>
+        <br>
+        <br>
+        <div class="flex">
+            <for(userplace in input.userplaces)>
+            <div class="card">
+                <div class="card-image carda">
+                    <img src="${userplace.image1}" class="imagecardsize" onerror="this.src='/images/LocationDefault.png'" alt="Card Back">
+                    <img src="${userplace.image2}" class="img-top imagecardsize" onerror="this.src='/images/LocationDefault.png'" alt="Card Front">
+                </div>
+                <div class="card-body">
+                    <h3>${userplace.placename}</h3>
+                    <p>${userplace.description}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="Sensoji.html"><button type="button" class="button">Explore more</button></a>
+                </div>
+            </div>
+            </for>  
+        </div> 
+        </div>  
+    </body>
+</main>
+    <footer>
+        <br>
+        <br>
+        <p class="fontcolor tcenter">All Rights Reserved</p>
+    </footer>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <script src="/navbar.js"></script>
+    <script src="/backtotop.js"></script>
+</html>
